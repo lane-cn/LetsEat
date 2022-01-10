@@ -114,11 +114,11 @@
                                         <connections>
                                             <outlet property="imgExplore" destination="bPD-XV-1Wa" id="Xhe-cI-3WZ"/>
                                             <outlet property="lblName" destination="Idd-lY-vvR" id="CSW-ts-hfM"/>
-                                            <segue destination="R3a-74-RMU" kind="show" id="X8f-06-ZCe"/>
+                                            <segue destination="R3a-74-RMU" kind="show" identifier="restaurantList" id="X8f-06-ZCe"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="3d8-Zq-Yxm">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="3d8-Zq-Yxm" customClass="ExploreHeaderView" customModule="Eat" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -152,7 +152,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="btn-location"/>
                                                     <connections>
-                                                        <segue destination="3Cm-ja-9oU" kind="presentation" id="ZeV-rN-eWY"/>
+                                                        <segue destination="3Cm-ja-9oU" kind="presentation" identifier="locationList" id="ZeV-rN-eWY"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekj-Qt-8Qw">
@@ -188,6 +188,9 @@
                                         <constraint firstItem="Shb-ds-umq" firstAttribute="leading" secondItem="3d8-Zq-Yxm" secondAttribute="leading" id="tb7-2p-bAx"/>
                                         <constraint firstItem="Shb-ds-umq" firstAttribute="top" secondItem="3d8-Zq-Yxm" secondAttribute="top" id="uVA-rt-Op4"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="lblLocation" destination="Q1e-gH-nNk" id="UF2-ee-jg3"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="8dk-7Z-7Hk" id="RJ9-KE-fH9"/>
@@ -231,7 +234,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="v44-Y2-zGT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="v44-Y2-zGT" customClass="RestaurantCell" customModule="Eat" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.0" width="335" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nrX-Lo-lV3">
@@ -350,6 +353,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="imgRestaurant" destination="0BO-Nu-trf" id="jSI-JX-1QE"/>
+                                            <outlet property="lblCuisine" destination="3l6-kB-TFQ" id="3DC-yK-EHE"/>
+                                            <outlet property="lblTitle" destination="Y7o-f2-hw9" id="Zns-7l-P2k"/>
                                             <segue destination="E8R-0C-D4P" kind="show" id="PVB-WH-7ws"/>
                                         </connections>
                                     </collectionViewCell>
@@ -514,10 +520,14 @@
                     <navigationItem key="navigationItem" id="z9U-Yd-qMf">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="whd-y6-mvf">
                             <connections>
-                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocaltionCancelWithSegue:" id="AUO-GY-BaU"/>
+                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="UMX-8P-9nU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wxq-tv-DHW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wxq-tv-DHW">
+                            <connections>
+                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocationDoneWithSegue:" id="u3v-FH-dG9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MNP-8d-IGZ" id="oo0-Vv-h6j"/>

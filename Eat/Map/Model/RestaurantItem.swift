@@ -19,18 +19,6 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
     var imageURL: String?
     var restaurantID: Int?
 
-    init(dict:[String:AnyObject]) {
-        if let lat = dict["lat"] as? Double { self.lat = lat }
-        if let long = dict["long"] as? Double { self.long = long }
-        if let name = dict["name"] as? String { self.name = name }
-        if let cuisines = dict["cuisines"] as? [String] { self.cuisines = cuisines }
-        if let address = dict["address"] as? String { self.address = address }
-        if let postalCode = dict["postalCode"] as? String { self.postalCode = postalCode }
-        if let state = dict["state"] as? String { self.state = state }
-        if let image = dict["image_url"] as? String { self.imageURL = image }
-        if let id = dict["id"] as? Int { self.restaurantID = id }
-    }
-    
     enum CodingKeys: String, CodingKey {
         case name
         case cuisines
@@ -51,17 +39,15 @@ class RestaurantItem: NSObject, MKAnnotation, Decodable {
     }
     
     var title: String? {
-        guard let n = name else {
-            return "N/A"
-        }
-        return "Name: " + n
+        return name
     }
 
     var subtitle: String? {
         if cuisines.isEmpty { return "" }
-        else if cuisines.count == 1 { return cuisines.first }
-        else { return cuisines.joined(separator: ", ")
-            
+        else if cuisines.count == 1 {
+            return cuisines.first
+        } else {
+            return cuisines.joined(separator: ", ")
         }
     }
 }
