@@ -118,7 +118,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="3d8-Zq-Yxm">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="3d8-Zq-Yxm" customClass="ExploreHeaderView" customModule="Eat" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -188,6 +188,9 @@
                                         <constraint firstItem="Shb-ds-umq" firstAttribute="leading" secondItem="3d8-Zq-Yxm" secondAttribute="leading" id="tb7-2p-bAx"/>
                                         <constraint firstItem="Shb-ds-umq" firstAttribute="top" secondItem="3d8-Zq-Yxm" secondAttribute="top" id="uVA-rt-Op4"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="lblLocation" destination="Q1e-gH-nNk" id="UF2-ee-jg3"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="8dk-7Z-7Hk" id="RJ9-KE-fH9"/>
@@ -514,10 +517,14 @@
                     <navigationItem key="navigationItem" id="z9U-Yd-qMf">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="whd-y6-mvf">
                             <connections>
-                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocaltionCancelWithSegue:" id="AUO-GY-BaU"/>
+                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="UMX-8P-9nU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wxq-tv-DHW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wxq-tv-DHW">
+                            <connections>
+                                <segue destination="Iqb-ed-U1A" kind="unwind" unwindAction="unwindLocationDoneWithSegue:" id="u3v-FH-dG9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MNP-8d-IGZ" id="oo0-Vv-h6j"/>

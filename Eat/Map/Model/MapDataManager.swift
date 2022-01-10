@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 import MapKit
 
 class MapDataManager: DataManager {
@@ -17,14 +16,11 @@ class MapDataManager: DataManager {
     }
     
     func fetch(completion: (_ annotations: [RestaurantItem]) -> ()) {
-        if items.count > 0 {
-            items.removeAll()
-        }
-        
-        for data in load(file: "MapLocations") {
-            items.append(RestaurantItem(dict: data))
+        let manager = RestaurantDataManager()
+        manager.fetch(by: "Boston", completeHandler: {
+            (items) in self.items = items
             completion(items)
-        }
+        })
     }
     
     func currentRegion(latDelta: CLLocationDegrees, longDelta: CLLocationDegrees) -> MKCoordinateRegion {

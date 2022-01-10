@@ -8,14 +8,11 @@
 import Foundation
 
 class LocationDataManager: DataManager {
-    private var locations: [String] = []
+    private var locations: [LocationItem] = []
     
     func fetch() {
-        for location in load(file: "Locations") {
-            if let city = location["city"] as? String,
-               let state = location["state"] as? String {
-                locations.append("\(city), \(state)")
-            }
+        for dict in loadData() {
+            locations.append(LocationItem(dict: dict))
         }
     }
     
@@ -23,7 +20,24 @@ class LocationDataManager: DataManager {
         return locations.count
     }
     
-    func locationItem(at index: IndexPath) -> String {
+    func locationItem(at index: IndexPath) -> LocationItem {
         locations[index.item]
+    }
+
+    func findLocation (by name: String) -> (isFound: Bool, position: Int) {
+        guard let index = locations.firstIndex(where: { $0.city == name }) else {
+            return (isFound: false, position: 0)
+        }
+        return (isFound: true, position: index)
+    }
+}
+
+private extension LocationDataManager {
+    func loadData() -> [[String: AnyObject]] {
+        guard let path = Bundle.main.path(forResource: "Locations", ofType: "plist"),
+              let items = NSArray(contentsOfFile: path) else {
+                  return [[:]]
+              }
+        return items as! [[String:AnyObject]]
     }
 }
