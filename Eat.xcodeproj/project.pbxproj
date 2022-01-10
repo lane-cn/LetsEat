@@ -26,6 +26,8 @@
 		435D3579278C048000E90DA7 /* San Antonio.json in Resources */ = {isa = PBXBuildFile; fileRef = 435D356B278C048000E90DA7 /* San Antonio.json */; };
 		435D357A278C048000E90DA7 /* Aspen.json in Resources */ = {isa = PBXBuildFile; fileRef = 435D356C278C048000E90DA7 /* Aspen.json */; };
 		435D357B278C048000E90DA7 /* Portland.json in Resources */ = {isa = PBXBuildFile; fileRef = 435D356D278C048000E90DA7 /* Portland.json */; };
+		43697BF9278C92CD0045A0F8 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43697BF8278C92CD0045A0F8 /* NoDataView.swift */; };
+		43697BFB278C92EF0045A0F8 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43697BFA278C92EF0045A0F8 /* NoDataView.xib */; };
 		4388BA95278449A3008A4A33 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388BA94278449A3008A4A33 /* LocationViewController.swift */; };
 		4388BA99278489C2008A4A33 /* Locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4388BA98278489C2008A4A33 /* Locations.plist */; };
 		4388BA9B27848B74008A4A33 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388BA9A27848B74008A4A33 /* LocationDataManager.swift */; };
@@ -71,6 +73,8 @@
 		435D356B278C048000E90DA7 /* San Antonio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "San Antonio.json"; sourceTree = "<group>"; };
 		435D356C278C048000E90DA7 /* Aspen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Aspen.json; sourceTree = "<group>"; };
 		435D356D278C048000E90DA7 /* Portland.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Portland.json; sourceTree = "<group>"; };
+		43697BF8278C92CD0045A0F8 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		43697BFA278C92EF0045A0F8 /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		4388BA94278449A3008A4A33 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4388BA98278489C2008A4A33 /* Locations.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Locations.plist; sourceTree = "<group>"; };
 		4388BA9A27848B74008A4A33 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		43697BF7278C92740045A0F8 /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				43697BF8278C92CD0045A0F8 /* NoDataView.swift */,
+				43697BFA278C92EF0045A0F8 /* NoDataView.xib */,
+			);
+			path = NoData;
+			sourceTree = "<group>";
+		};
 		4388BA912784467D008A4A33 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 		4388BAA427854B0C008A4A33 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				43697BF7278C92740045A0F8 /* NoData */,
 				435D355F278C044700E90DA7 /* JSON */,
 				4388BAA527854B27008A4A33 /* DataManager.swift */,
 				435D355B278B529500E90DA7 /* Segue.swift */,
@@ -370,6 +384,7 @@
 				435D3557278B3CAC00E90DA7 /* ReviewForm.storyboard in Resources */,
 				435D3574278C048000E90DA7 /* Los Angeles.json in Resources */,
 				435D356F278C048000E90DA7 /* Charleston.json in Resources */,
+				43697BFB278C92EF0045A0F8 /* NoDataView.xib in Resources */,
 				435D3577278C048000E90DA7 /* New York.json in Resources */,
 				435D3579278C048000E90DA7 /* San Antonio.json in Resources */,
 				435D3573278C048000E90DA7 /* Boston.json in Resources */,
@@ -399,6 +414,7 @@
 				43D7430A2783276A002B3765 /* ExploreItem.swift in Sources */,
 				4388BAA627854B27008A4A33 /* DataManager.swift in Sources */,
 				4388BAA327849CDB008A4A33 /* MapDataManager.swift in Sources */,
+				43697BF9278C92CD0045A0F8 /* NoDataView.swift in Sources */,
 				43D742EB27812901002B3765 /* AppDelegate.swift in Sources */,
 				439EC320278C0F1F00C4DFC8 /* RestaurantDataManager.swift in Sources */,
 				43D7430527813E00002B3765 /* RestaurantListViewController.swift in Sources */,

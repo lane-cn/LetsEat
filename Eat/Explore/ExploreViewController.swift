@@ -29,7 +29,7 @@ class ExploreViewController: UIViewController, UICollectionViewDelegate {
         case Segue.restaurantList.rawValue:
             showRestaurantListing(segue: segue)
         default:
-            print("Segue not added")
+            print("Segue not added: \(String(describing: segue.identifier?.description))")
         }
     }
 
@@ -66,16 +66,16 @@ private extension ExploreViewController {
         if let viewController = segue.destination as? RestaurantListViewController,
             let city = selectedCity,
             let index = collectionView.indexPathsForSelectedItems?.first {
-            viewController.selectedType = manager.explore(at: index).name
-            viewController.selectedCity = city
+                viewController.selectedType = manager.explore(at: index).name
+                viewController.selectedCity = city
         }
     }
     
     func showAlert() {
         let alertController = UIAlertController(title: "Location Needed", message: "Please select a location.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {print("action callback: \($0)")})
         alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: {()->Void in print("present callback")})
     }
 
     @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {

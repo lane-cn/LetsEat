@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import os
 
 class RestaurantListViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    let log = Logger()
     var manager = RestaurantDataManager()
     var selectedRestaurant: RestaurantItem?
     var selectedCity: LocationItem?
@@ -22,6 +23,23 @@ class RestaurantListViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("select type: \(selectedType as Any), city: \(selectedCity as Any)")
+        
+        guard let location = selectedCity?.city,
+              let filter = selectedType else {
+                  return
+              }
+        manager.fetch(by: location, with: filter) {
+            items in if manager.numberOfItems() > 0 {
+                for item in items {
+                    if let itemName = item.name {
+                        print("restaurant name: \(itemName)")
+                    }
+                }
+            } else {
+                print("no data")
+            }
+        }
         createData()
         setupTitle()
     }
@@ -38,10 +56,10 @@ private extension RestaurantListViewController {
             if manager.numberOfItems() > 0 {
                 collectionView.backgroundView = nil
             } else {
-                //let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
-                //view.set(title: "Restaurants")
-                //view.set(desc: "No restaurants found.")
-                //collectionView.backgroundView = view
+                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
+                view.set(title: "Restaurants")
+                view.set(desc: "No restaurants found.")
+                collectionView.backgroundView = view
             }
             collectionView.reloadData()
         }
@@ -65,17 +83,17 @@ extension RestaurantListViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
         let item = manager.restaurantItem(at: indexPath)
         if let name = item.name {
-            //cell.lblTitle.text = name
+            cell.lblTitle.text = name
         }
         if let cuisine = item.subtitle {
-            //cell.lblCuisine.text = cuisine
+            cell.lblCuisine.text = cuisine
         }
         if let image = item.imageURL {
             if let url = URL(string: image) {
                 let data = try? Data(contentsOf: url)
                 if let imageData = data {
                     DispatchQueue.main.async {
-                        //cell.imgRestaurant.image = UIImage(data: imageData)
+                        cell.imgRestaurant.image = UIImage(data: imageData)
                     }
                 }
             }

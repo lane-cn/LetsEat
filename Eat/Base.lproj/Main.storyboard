@@ -114,7 +114,7 @@
                                         <connections>
                                             <outlet property="imgExplore" destination="bPD-XV-1Wa" id="Xhe-cI-3WZ"/>
                                             <outlet property="lblName" destination="Idd-lY-vvR" id="CSW-ts-hfM"/>
-                                            <segue destination="R3a-74-RMU" kind="show" id="X8f-06-ZCe"/>
+                                            <segue destination="R3a-74-RMU" kind="show" identifier="restaurantList" id="X8f-06-ZCe"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -152,7 +152,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="btn-location"/>
                                                     <connections>
-                                                        <segue destination="3Cm-ja-9oU" kind="presentation" id="ZeV-rN-eWY"/>
+                                                        <segue destination="3Cm-ja-9oU" kind="presentation" identifier="locationList" id="ZeV-rN-eWY"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekj-Qt-8Qw">
@@ -234,7 +234,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="v44-Y2-zGT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="v44-Y2-zGT" customClass="RestaurantCell" customModule="Eat" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.0" width="335" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nrX-Lo-lV3">
@@ -353,6 +353,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="imgRestaurant" destination="0BO-Nu-trf" id="jSI-JX-1QE"/>
+                                            <outlet property="lblCuisine" destination="3l6-kB-TFQ" id="3DC-yK-EHE"/>
+                                            <outlet property="lblTitle" destination="Y7o-f2-hw9" id="Zns-7l-P2k"/>
                                             <segue destination="E8R-0C-D4P" kind="show" id="PVB-WH-7ws"/>
                                         </connections>
                                     </collectionViewCell>
