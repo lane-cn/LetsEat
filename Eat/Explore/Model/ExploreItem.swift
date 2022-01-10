@@ -2,7 +2,7 @@
 //  ExploreItem.swift
 //  Eat
 //
-//  Created by htlu on 2022/1/3.
+//  Created by lu on 2022/1/3.
 //
 
 import Foundation

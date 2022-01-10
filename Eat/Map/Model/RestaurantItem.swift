@@ -2,7 +2,7 @@
 //  RestaurantItem.swift
 //  Eat
 //
-//  Created by htlu on 2022/1/4.
+//  Created by lu on 2022/1/4.
 //
 
 import UIKit
