@@ -87,7 +87,7 @@ private extension ExploreViewController {
             selectedCity = viewController.selectedCity
             if let city = selectedCity {
                 log.debug("select city: \(city.full)")
-                //headerView.lblLocation.text = city.full
+                headerView.lblLocation.text = city.full
             }
         }
     }
@@ -96,8 +96,9 @@ private extension ExploreViewController {
 // MARK: UICollectionViewDataSource
 extension ExploreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
-        return headerView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+        headerView = header as? ExploreHeaderView
+        return header
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
