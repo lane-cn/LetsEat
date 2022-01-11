@@ -21,6 +21,17 @@ class RestaurantListViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case Segue.showDetail.rawValue:
+                showRestaurantDetail(segue: segue)
+            default:
+                print("Segue not added")
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("select type: \(selectedType as Any), city: \(selectedCity as Any)")
@@ -71,6 +82,14 @@ private extension RestaurantListViewController {
             title = "\(city.uppercased()), \(state.uppercased())"
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func showRestaurantDetail(segue: UIStoryboardSegue) {
+        if let viewController = segue.destination as? RestaurantDetailViewController,
+           let index = collectionView.indexPathsForSelectedItems?.first {
+            selectedRestaurant = manager.restaurantItem(at: index)
+            viewController.selectedRestaurent = selectedRestaurant
+        }
     }
 }
 
