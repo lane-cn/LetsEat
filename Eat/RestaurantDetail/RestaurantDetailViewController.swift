@@ -18,6 +18,7 @@ class RestaurantDetailViewController: UITableViewController {
     @IBOutlet weak var lblOverallRating: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var imgMap: UIImageView!
+    @IBOutlet weak var ratingsView: RatingsView!
     
     var selectedRestaurent: RestaurantItem?
 
@@ -27,12 +28,21 @@ class RestaurantDetailViewController: UITableViewController {
         //dump(selectedRestaurent as Any)
     }
 
+    @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {
+        
+    }
 }
 
 private extension RestaurantDetailViewController {
     func initialize() {
         setupLabels()
         createMap()
+        createRating()
+    }
+    
+    func createRating() {
+        ratingsView.rating = 4.5
+        ratingsView.isEnabled = true
     }
     
     func setupLabels() {
