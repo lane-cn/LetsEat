@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433DEBF5278EA70700D16F66 /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433DEBF4278EA70700D16F66 /* ReviewFormViewController.swift */; };
 		435D3555278B3CAB00E90DA7 /* PhotoFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3552278B3CAB00E90DA7 /* PhotoFilter.storyboard */; };
 		435D3556278B3CAC00E90DA7 /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3553278B3CAB00E90DA7 /* RestaurantDetail.storyboard */; };
 		435D3557278B3CAC00E90DA7 /* ReviewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3554278B3CAB00E90DA7 /* ReviewForm.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		433DEBF4278EA70700D16F66 /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
 		435D3552278B3CAB00E90DA7 /* PhotoFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoFilter.storyboard; sourceTree = "<group>"; };
 		435D3553278B3CAB00E90DA7 /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
 		435D3554278B3CAB00E90DA7 /* ReviewForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewForm.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				435D3554278B3CAB00E90DA7 /* ReviewForm.storyboard */,
 				43B10CD1278D9F1100AE4BB7 /* RatingsView.swift */,
+				433DEBF4278EA70700D16F66 /* ReviewFormViewController.swift */,
 			);
 			path = ReviewForm;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433DEBF5278EA70700D16F66 /* ReviewFormViewController.swift in Sources */,
 				439EC322278C1FEE00C4DFC8 /* LocationItem.swift in Sources */,
 				43B10CD2278D9F1100AE4BB7 /* RatingsView.swift in Sources */,
 				439EC324278C24C500C4DFC8 /* ExploreHeaderView.swift in Sources */,

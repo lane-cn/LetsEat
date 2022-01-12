@@ -42,6 +42,37 @@ class RatingsView: UIControl {
         }
     }
     
+    override var canBecomeFirstResponder: Bool {
+        true
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        guard self.isEnabled else {
+            return false
+        }
+        super.beginTracking(touch, with: event)
+        handle(with: touch)
+        return true
+    }
+    
+    func handle(with touch: UITouch) {
+        let cellWidth = self.bounds.size.width / CGFloat(totalStars)
+        let location = touch.location(in: self)
+        var value = location.x / cellWidth
+        if (value + 0.5 < value.rounded(.up)) {
+            value = floor(value) + 0.5
+        } else {
+            value = value.rounded(.up)
+        }
+        updateRating(with: Double(value))
+    }
+    
+    func updateRating(with value: Double) {
+        if (self.rating != value && value >= 0 && value <= Double(totalStars)) {
+            self.rating = value
+            setNeedsDisplay()
+        }
+    }
 }
 
 private extension RatingsView {

@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="4190" y="-832"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Review Form View Controller-->
         <scene sceneID="2Lj-qr-Q1h">
             <objects>
-                <tableViewController id="FMe-3H-aSV" sceneMemberID="viewController">
+                <tableViewController id="FMe-3H-aSV" customClass="ReviewFormViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wbQ-Yd-wf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,11 +143,21 @@
                     <navigationItem key="navigationItem" id="HhK-Tr-uQT">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DoS-wK-OFu">
                             <connections>
-                                <segue destination="Wbq-hq-Or1" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="RfM-9X-IEh"/>
+                                <segue destination="Wbq-hq-Or1" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="ro2-JQ-4jC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yDv-S1-VFB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yDv-S1-VFB">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="FMe-3H-aSV" id="4ij-nk-F0I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ratingView" destination="Jgv-x1-Dm8" id="jYY-bM-QzI"/>
+                        <outlet property="tfName" destination="uwv-vD-pti" id="L0r-Kf-l6e"/>
+                        <outlet property="tfReview" destination="mfP-Ls-LpI" id="2Tt-ru-I7k"/>
+                        <outlet property="tfTitle" destination="jdr-kq-Djw" id="9Cl-wY-Rvi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoT-q7-XLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Wbq-hq-Or1" userLabel="Exit" sceneMemberID="exit"/>
