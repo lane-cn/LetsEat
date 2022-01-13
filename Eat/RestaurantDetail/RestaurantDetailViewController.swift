@@ -27,6 +27,25 @@ class RestaurantDetailViewController: UITableViewController {
         initialize()
         //dump(selectedRestaurent as Any)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch Segue(rawValue: identifier) {
+            case .showReview:
+                showReview(segue: segue)
+            default:
+                print("segue not set")
+            }
+        }
+    }
+    
+    func showReview(segue: UIStoryboardSegue) {
+        guard let navController = segue.destination as? UINavigationController,
+              let viewController = navController.topViewController as? ReviewFormViewController else {
+                  return
+              }
+        viewController.selectedRestaurant = selectedRestaurent
+    }
 
     @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {
         
