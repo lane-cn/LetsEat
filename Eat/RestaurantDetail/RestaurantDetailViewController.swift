@@ -33,6 +33,8 @@ class RestaurantDetailViewController: UITableViewController {
             switch Segue(rawValue: identifier) {
             case .showReview:
                 showReview(segue: segue)
+            case .showPhotoFilter:
+                showPhotoFilter(segue: segue)
             default:
                 print("segue not set")
             }
@@ -45,6 +47,14 @@ class RestaurantDetailViewController: UITableViewController {
                   return
               }
         viewController.selectedRestaurant = selectedRestaurent
+    }
+    
+    func showPhotoFilter(segue: UIStoryboardSegue) {
+        guard let controller = segue.destination as? UINavigationController,
+              let view = controller.topViewController as? PhotoFilterViewController else {
+                  return
+              }
+        view.selectedRestaurant = selectedRestaurent
     }
 
     @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {

@@ -30,7 +30,7 @@ private extension ReviewFormViewController {
         item.customerReview = tfReview.text
         item.restaurantID = selectedRestaurant?.restaurantID
         item.rating = Double(ratingView.rating)
-        CoreDataManager.shard.addReview(item)
+        CoreDataManager.shared.addReview(item)
 //        dismiss(animated: true, completion: nil)
 //        print("score: \(ratingView.rating)")
 //        print("title: \(tfTitle.text!)")

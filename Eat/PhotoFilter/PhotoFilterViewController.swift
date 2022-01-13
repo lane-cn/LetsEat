@@ -13,7 +13,7 @@ class PhotoFilterViewController: UIViewController {
     var image: UIImage?
     var thumbnail: UIImage?
     let manager = FilterManager()
-    var selectedRestaurantID: Int?
+    var selectedRestaurant: RestaurantItem?
     var filters: [FilterItem] = []
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var imgExample: UIImageView!
@@ -28,6 +28,17 @@ private extension PhotoFilterViewController {
     func initialize() {
         setupCollectionView()
         checkSource()
+    }
+    
+    func checkSavePhoto() {
+        if let img = self.imgExample.image {
+            var item = RestaurantPhotoItem()
+            item.photo = generate(image: img, ratio: CGFloat(102))
+            item.date = Date()
+            item.restaurantID = selectedRestaurant?.restaurantID
+            CoreDataManager.shared.addPhoto(item)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     func setupCollectionView() {
@@ -72,6 +83,10 @@ private extension PhotoFilterViewController {
 
     @IBAction func onPhotoTapped(_ sender: Any) {
         checkSource()
+    }
+    
+    @IBAction func onSaveTapped(_ sender: AnyObject) {
+        checkSavePhoto()
     }
 }
 

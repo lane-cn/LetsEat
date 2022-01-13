@@ -92,5 +92,5 @@ struct CoreDataManager {
 }
 
 extension CoreDataManager {
-    static var shard = CoreDataManager()
+    static var shared = CoreDataManager()
 }
