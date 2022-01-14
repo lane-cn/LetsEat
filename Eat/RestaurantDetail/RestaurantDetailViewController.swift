@@ -27,6 +27,35 @@ class RestaurantDetailViewController: UITableViewController {
         initialize()
         //dump(selectedRestaurent as Any)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch Segue(rawValue: identifier) {
+            case .showReview:
+                showReview(segue: segue)
+            case .showPhotoFilter:
+                showPhotoFilter(segue: segue)
+            default:
+                print("segue not set")
+            }
+        }
+    }
+    
+    func showReview(segue: UIStoryboardSegue) {
+        guard let navController = segue.destination as? UINavigationController,
+              let viewController = navController.topViewController as? ReviewFormViewController else {
+                  return
+              }
+        viewController.selectedRestaurant = selectedRestaurent
+    }
+    
+    func showPhotoFilter(segue: UIStoryboardSegue) {
+        guard let controller = segue.destination as? UINavigationController,
+              let view = controller.topViewController as? PhotoFilterViewController else {
+                  return
+              }
+        view.selectedRestaurant = selectedRestaurent
+    }
 
     @IBAction func unwindReviewCancel(segue: UIStoryboardSegue) {
         
@@ -41,7 +70,13 @@ private extension RestaurantDetailViewController {
     }
     
     func createRating() {
-        ratingsView.rating = 4.5
+        if let id = selectedRestaurent?.restaurantID {
+            let rating = CoreDataManager.shared.fetchRating(by: id)
+            ratingsView.rating = rating
+
+            let roundValue = (rating * 10).rounded() / 10
+            lblOverallRating.text = "\(roundValue)"
+        }
         ratingsView.isEnabled = true
     }
     

@@ -472,10 +472,10 @@
             </objects>
             <point key="canvasLocation" x="4596" y="-349"/>
         </scene>
-        <!--View Controller-->
+        <!--Reviews View Controller-->
         <scene sceneID="s68-WA-D2y">
             <objects>
-                <viewController id="I7Z-yA-lrD" sceneMemberID="viewController">
+                <viewController id="I7Z-yA-lrD" customClass="ReviewsViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b2e-3Y-CNB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,7 +532,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-Mn-9W5">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-Mn-9W5" customClass="RatingsView" customModule="Eat" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="25" width="117" height="25"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -568,6 +568,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="I7Z-yA-lrD" id="kQk-eI-2FE"/>
+                                    <outlet property="delegate" destination="I7Z-yA-lrD" id="ksr-hC-zFQ"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KYY-TR-pBi"/>
@@ -578,6 +582,9 @@
                             <constraint firstItem="G3d-i3-aYj" firstAttribute="top" secondItem="b2e-3Y-CNB" secondAttribute="top" id="yJA-SW-7TR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="G3d-i3-aYj" id="xGY-2b-C6N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sv-SZ-nNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
