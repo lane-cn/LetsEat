@@ -20,6 +20,8 @@
 		434688A52790569C002FD5E4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434688A42790569C002FD5E4 /* CoreDataManager.swift */; };
 		434688A82790F79D002FD5E4 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434688A72790F79D002FD5E4 /* ReviewCell.swift */; };
 		434688AA2790F89D002FD5E4 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434688A92790F89D002FD5E4 /* ReviewsViewController.swift */; };
+		43471DCA279141F200B985ED /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471DC9279141F200B985ED /* PhotoCell.swift */; };
+		43471DCC2791433500B985ED /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471DCB2791433500B985ED /* PhotoViewController.swift */; };
 		435D3555278B3CAB00E90DA7 /* PhotoFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3552278B3CAB00E90DA7 /* PhotoFilter.storyboard */; };
 		435D3556278B3CAC00E90DA7 /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3553278B3CAB00E90DA7 /* RestaurantDetail.storyboard */; };
 		435D3557278B3CAC00E90DA7 /* ReviewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 435D3554278B3CAB00E90DA7 /* ReviewForm.storyboard */; };
@@ -81,6 +83,8 @@
 		434688A42790569C002FD5E4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		434688A72790F79D002FD5E4 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		434688A92790F89D002FD5E4 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		43471DC9279141F200B985ED /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		43471DCB2791433500B985ED /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		435D3552278B3CAB00E90DA7 /* PhotoFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoFilter.storyboard; sourceTree = "<group>"; };
 		435D3553278B3CAB00E90DA7 /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
 		435D3554278B3CAB00E90DA7 /* ReviewForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewForm.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,15 @@
 				434688A92790F89D002FD5E4 /* ReviewsViewController.swift */,
 			);
 			path = Reviews;
+			sourceTree = "<group>";
+		};
+		43471DC8279141C100B985ED /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				43471DC9279141F200B985ED /* PhotoCell.swift */,
+				43471DCB2791433500B985ED /* PhotoViewController.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		435D3558278B451000E90DA7 /* RestaurantDetail */ = {
@@ -333,6 +346,7 @@
 		43D742E927812901002B3765 /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				43471DC8279141C100B985ED /* Photo */,
 				434688A62790F774002FD5E4 /* Reviews */,
 				435D355A278B4A5600E90DA7 /* PhotoFilter */,
 				435D3559278B4A3F00E90DA7 /* ReviewForm */,
@@ -488,6 +502,7 @@
 				439EC322278C1FEE00C4DFC8 /* LocationItem.swift in Sources */,
 				43B10CD2278D9F1100AE4BB7 /* RatingsView.swift in Sources */,
 				439EC324278C24C500C4DFC8 /* ExploreHeaderView.swift in Sources */,
+				43471DCC2791433500B985ED /* PhotoViewController.swift in Sources */,
 				43D7430A2783276A002B3765 /* ExploreItem.swift in Sources */,
 				433DEC02278F36EB00D16F66 /* PhotoFilterViewController.swift in Sources */,
 				433DEC00278F303F00D16F66 /* FilterCell.swift in Sources */,
@@ -506,6 +521,7 @@
 				43D742ED27812901002B3765 /* SceneDelegate.swift in Sources */,
 				435D355E278B550300E90DA7 /* RestaurantDetailViewController.swift in Sources */,
 				433DEBFA278F2A8300D16F66 /* FilterItem.swift in Sources */,
+				43471DCA279141F200B985ED /* PhotoCell.swift in Sources */,
 				434688A3278FF56B002FD5E4 /* RestaurantPhotoItem.swift in Sources */,
 				4388BAA827854E9A008A4A33 /* MapViewController.swift in Sources */,
 				43D74302278133B2002B3765 /* ExploreViewController.swift in Sources */,

@@ -590,10 +590,10 @@
             </objects>
             <point key="canvasLocation" x="4244" y="215"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="OuK-dn-K2Q">
             <objects>
-                <viewController id="Kqe-22-GEj" sceneMemberID="viewController">
+                <viewController id="Kqe-22-GEj" customClass="PhotoViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JkL-eZ-cdT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -643,6 +643,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kqe-22-GEj" id="eBe-ON-cRd"/>
+                                    <outlet property="delegate" destination="Kqe-22-GEj" id="8FW-uF-4vv"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z3F-Su-FQe"/>
@@ -653,6 +657,9 @@
                             <constraint firstItem="Pkx-1f-9vB" firstAttribute="trailing" secondItem="Z3F-Su-FQe" secondAttribute="trailing" id="tMK-Qs-0HU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Pkx-1f-9vB" id="A4k-lZ-9wE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcE-61-elL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
