@@ -70,7 +70,13 @@ private extension RestaurantDetailViewController {
     }
     
     func createRating() {
-        ratingsView.rating = 4.5
+        if let id = selectedRestaurent?.restaurantID {
+            let rating = CoreDataManager.shared.fetchRating(by: id)
+            ratingsView.rating = rating
+
+            let roundValue = (rating * 10).rounded() / 10
+            lblOverallRating.text = "\(roundValue)"
+        }
         ratingsView.isEnabled = true
     }
     
