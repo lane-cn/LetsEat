@@ -83,7 +83,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="177" height="137"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="bPD-XV-1Wa" secondAttribute="bottom" id="08T-Iv-EzF"/>
                                                         <constraint firstItem="bPD-XV-1Wa" firstAttribute="leading" secondItem="hd5-Ql-YX8" secondAttribute="leading" id="7oF-na-HgU"/>
@@ -505,7 +504,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QT8-dY-OF8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -525,7 +523,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xjn-x2-0QM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -556,7 +553,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xKu-Kd-jcX"/>
+        <segue reference="98y-Mg-EBH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="american" width="88.5" height="64.5"/>
@@ -572,12 +569,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
